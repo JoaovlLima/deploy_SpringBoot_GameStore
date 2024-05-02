@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Game Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/list">Game List</a></li>
+                <li><a href="/addgame">Add Game</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="game-list">
+        <div class="game-item">
+            <h2>Super Adventure Quest</h2>
+            <p>An epic RPG with dragons, magic, and treasure!</p>
+        </div>
+        <div class="game-item">
+            <h2>Galactic Space Battles</h2>
+            <p>Pilot your spaceship and save the universe!</p>
+        </div>
+        <!-- Add more game items here -->
+    </div>
+    
+</body>
+</html>

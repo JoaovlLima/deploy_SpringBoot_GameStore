@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Game Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/list">Game List</a></li>
+                <li><a href="/addgame">Add Game</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Developer</td>
+            <td>Price</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        <tr th:each="game : ${games}">
+            <td th:text="${game.nome}"></td>
+            <td th:text="${game.descricao}"></td>
+            <td th:text="${game.desenvolvedora}"></td>
+            <td th:text="${game.preco}"></td>
+            <td><a th:href="@{/games/{id}(id=${game.id})}">Edit</a></td>
+            <td><a th:href="@{/games/{id}/delete(id=${game.id})}">Delete</a></td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <a th:href="@{/addgame}">Create New Game</a>
+            </td>
+        </tr>
+    </tbody>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Game Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/list">Game List</a></li>
+                <li><a href="/addgame">Add Game</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <form action="/addgame" method="post">
+            <h1>Add Game</h1>
+            <label for="nome">nome</label>
+            <input type="text" name="nome" id="nome">
+            <label for="descricao">descricao</label>
+            <input type="text" name="descricao" id="descricao">
+            <label for="desenvolvedora">desenvolvedora</label>
+            <input type="text" name="desenvolvedora" id="desenvolvedora">
+            <label for="preco">preco</label>
+            <input type="text" name="preco" id="preco">
+            <input type="submit" value="Add Game">
+
+        </form>
+    </div>
+</body>
+</html>
