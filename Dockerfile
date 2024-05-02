@@ -1,17 +1,20 @@
-from ubuntu:latest as buid
+FROM ubuntu:latest AS build
 
-Run apt-get update && apt-get install -y openjdk-17-jdk
+# Instale o OpenJDK
+RUN apt-get update && apt-get install -y openjdk-17-jdk
 
-COPY . . 
+COPY . .
 
-Run apt-get install maven -y
+RUN apt-get install maven -y
 
-Run mvn clean install
+RUN mvn clean install
 
-From openjdk-17-jdk-slim
+FROM openjdk:17-jdk-slim
 
-Expose 8080
+EXPOSE 8080
 
+# Copie o arquivo JAR da aplicação para o contêiner
 COPY --from=build /target/gamestore.jar app.jar
 
-entrypoint ["java", "-jar","app.jar"]
+# Defina o comando de inicialização da aplicação
+ENTRYPOINT ["java", "-jar", "app.jar"]
