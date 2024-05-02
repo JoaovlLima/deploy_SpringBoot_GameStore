@@ -12,6 +12,6 @@ From openjdk-17-jdk-slim
 
 Expose 8080
 
-COPY --from=build /target/gamestore.jar /app.jar
+COPY --from=build /target/gamestore.jar app.jar
 
 entrypoint ["java", "-jar","app.jar"]
