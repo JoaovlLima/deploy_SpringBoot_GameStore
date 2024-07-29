@@ -1,0 +1,25 @@
+language: java
+jdk:
+  - openjdk11
+
+env:
+  global:
+    - NODE_ENV=production
+    - secure: "YOUR_ENCRYPTED_VARIABLE"
+
+branches:
+  only:
+    - main
+
+script:
+  - ./mvnw clean install
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "YOUR_ENCRYPTED_API_KEY"
+  app: your-heroku-app-name
+
+cache:
+  directories:
+    - $HOME/.m2
